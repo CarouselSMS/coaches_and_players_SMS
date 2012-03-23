@@ -1,0 +1,21 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="/javascripts/sms-field.js"></script>
+
+<form method="post" action="/send_message">  
+  <label>From Coach:</label>
+  <select name="tag">
+    <% COACHES.each do |coach_tag, coach_name| %>
+      <option value="<%= coach_tag %>"><%= coach_name %></option>
+    <% end %>
+  </select>
+  <label>To Player:</label>
+  <select name="phone">
+    <% PLAYERS.each do |player_phone, player_name| %>
+      <option value="<%= player_phone %>"><%= player_name %></option>
+    <% end %>
+  </select>
+  <br/>
+  <textarea name="message" cols="40" rows="10" class="sms-field"></textarea>
+  <br/>
+  <input type="submit" value="Send Message">
+</form>
