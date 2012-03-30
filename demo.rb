@@ -28,7 +28,7 @@ post '/send_message' do
   data = {
     :api_key      => API_KEY,
     :phone_number => params[:phone],
-    :body         => params[:tag] + ': ' + params[:message],
+    :body         => COACHES[params[:tag]] + ': ' + params[:message],
     :tag          => params[:tag]
   }
   res = Net::HTTP.post_form(URI.parse(API_URL + "/" + command), data)

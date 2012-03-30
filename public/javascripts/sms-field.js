@@ -1,10 +1,10 @@
 $.fn.sms_field = function(opts) {
 
-  const MAX_TAG_LENGTH = 10;
+  const MAX_PREFIX_LENGTH = 10; // number of characters reserved for prefix
 
   // Default options
   var defaults   = {
-    part_size:            160 - MAX_TAG_LENGTH,  // number of characters in the part
+    part_size:            160 - MAX_PREFIX_LENGTH,  // number of characters in the part
     part_warning:         true, // TRUE to show warning when the part boundary is reached
     multipart:            true, // TRUE to show the number of parts in the message
     reserve_for_counter:  8     // "(xx/yy) "
